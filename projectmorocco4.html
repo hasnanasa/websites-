@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOROCCO - Ceremonies & Zellige</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            /* THE ZELLIGE BACKGROUND Maghribi */
+            background-image: url('https://www.transparenttextures.com/patterns/arabesque-outlines.png'), 
+                              linear-gradient(45deg, #004d26 25%, #005e2e 25%, #005e2e 50%, #004d26 50%, #004d26 75%, #005e2e 75%, #005e2e 100%);
+            background-size: 100px 100px;
+            background-color: #004d26;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        /* --- THE DYNAMIC ZELLIGE OVERLAY --- */
+        .zellige-overlay {
+            position: fixed;
+            inset: 0;
+            background: url('https://img.freepik.com/free-vector/traditional-moroccan-zellige-pattern-design_23-2148439340.jpg?w=800');
+            background-size: 300px;
+            opacity: 0.2;
+            z-index: 0;
+            animation: mosaicShift 100s linear infinite;
+        }
+
+        @keyframes mosaicShift {
+            from { background-position: 0 0; }
+            to { background-position: 500px 500px; }
+        }
+
+        /* --- CENTER BRANDING --- */
+        .brand-layer {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            text-align: center;
+            width: 100%;
+        }
+
+        .brand-layer h1 {
+            font-size: 14vw;
+            color: #c1272d; 
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            text-shadow: 0 0 30px rgba(0,0,0,0.8);
+            -webkit-text-stroke: 1.5px gold;
+        }
+
+        .quote {
+            font-size: 2.5vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: redToGreen 2s forwards 2s;
+        }
+
+        @keyframes redToGreen {
+            0% { opacity: 0; color: #c1272d; }
+            100% { opacity: 1; color: #00ff80; filter: drop-shadow(0 0 10px #00ff80); }
+        }
+
+        /* --- THE MENU (Appears after 2s) --- */
+        .heritage-menu {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2000;
+            display: flex;
+            gap: 15px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 2s;
+        }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        .menu-item {
+            color: white;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 12px 25px;
+            border: 2px solid #c1272d;
+            background: rgba(0, 0, 0, 0.7);
+            transition: 0.4s;
+        }
+
+        .menu-item:hover, .active {
+            background: #c1272d;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ff0000;
+        }
+
+        /* --- CEREMONY PHOTO CONTAINERS --- */
+        .ceremony-grid {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1;
+            padding: 0 5%;
+        }
+
+        .ceremony-card {
+            width: 20vw;
+            height: 30vw;
+            background-size: cover;
+            background-position: center;
+            border: 5px solid gold;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .ceremony-card:hover {
+            transform: scale(1.1) rotate(2deg);
+            border-color: #c1272d;
+            box-shadow: 0 0 50px #c1272d;
+        }
+
+        .vignette {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.8) 100%);
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        /* --- BACK HOME BUTTON --- */
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 3000;
+            padding: 10px 20px;
+            background: #c1272d;
+            color: white;
+            text-decoration: none;
+            font-weight: 900;
+            border: 2px solid white;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="home-btn">← Home</a>
+
+    <div class="zellige-overlay"></div>
+    <div class="vignette"></div>
+
+    <div class="brand-layer">
+        <h1>Morocco</h1>
+        <p class="quote">where the cultures meet</p>
+    </div>
+
+    <div class="ceremony-grid">
+        <div class="ceremony-card" style="background-image: url('https://images.unsplash.com/photo-1548013146-72479768b949?w=600')"></div>
+        <div class="ceremony-card" style="background-image: url('https://images.unsplash.com/photo-1545129139-1beb780cf337?w=600')"></div>
+        <div class="ceremony-card" style="background-image: url('https://images.unsplash.com/photo-1596204008772-50d40e4f2430?w=600')"></div>
+    </div>
+
+    <nav class="heritage-menu">
+        <a href="#" class="menu-item active">Ceremonies</a>
+        <a href="nature.html" class="menu-item">Nature</a>
+        <a href="history.html" class="menu-item">History</a>
+        <a href="clothes.html" class="menu-item">Clothes</a>
+        <a href="https://www.visitmorocco.com" class="menu-item">More Information</a>
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moroccan Ceremonies - Pure CSS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(5, 60, 20, 0.9), rgba(2, 40, 10, 0.95)), 
+                        url("c:/Users/hasna aitiaz/Downloads/Coat_of_arms_of_Morocco.svg.png");
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { margin-top: 50px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); letter-spacing: 5px; }
+
+        .slider-container {
+            width: 100%;
+            height: 250px;
+            margin: 50px 0;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 2px solid #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-track {
+            display: flex;
+            width: calc(300px * 12); 
+            animation: scroll-forever 25s linear infinite;
+        }
+
+        .slider-track:hover { animation-play-state: paused; }
+
+        @keyframes scroll-forever {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 6)); } 
+        }
+
+        .slide {
+            width: 300px;
+            height: 200px;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .slide:hover img { border-color: #ffcc00; transform: scale(1.05); }
+
+        .modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+        }
+
+        .modal:target {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #1a3c1a;
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 500px;
+            text-align: center;
+            border: 3px solid #ffcc00;
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.3);
+        }
+
+        .close-btn {
+            display: block;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .yt-link {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .nav-footer { margin: 40px 0 100px 0; }
+        .back-link { color: #ffcc00; text-decoration: none; font-size: 20px; font-weight: bold; }
+        h1 { 
+            margin-top: 50px; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
+            letter-spacing: 5px;
+            
+            /* NEW BLOCK STYLING */
+            background-color: #0a3e24; /* Deep Moroccan Green */
+            padding: 20px 40px;
+            border-radius: 15px;
+            border: 2px solid #e5bd1c; /* Gold border to make it pop */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MOROCCAN CEREMONIES</h1>
+    <p style="color: #ffcc00;">Click an image to explore tradition</p>
+
+    <div class="slider-container">
+        <div class="slider-track">
+            <a href="#info1" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\téléchargement (27).jpeg"></a>
+            <a href="#info2" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\téléchargement (28).jpeg"></a>
+            <a href="#info3" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\téléchargement (29).jpeg"></a>
+            <a href="#info4" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\images (17).jpeg"></a>
+            <a href="#info5" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\téléchargement (26).jpeg"></a>
+            <a href="#info6" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\images (18).jpeg"></a>
+
+            <a href="#info1" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\téléchargement (27).jpeg"></a>
+            <a href="#info2" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\téléchargement (28).jpeg"></a>
+            <a href="#info3" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\téléchargement (29).jpeg"></a>
+            <a href="#info4" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\images (17).jpeg"></a>
+            <a href="#info5" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\téléchargement (26).jpeg"></a>
+            <a href="#info6" class="slide"><img src="c:\Users\hasna aitiaz\Downloads\images (18).jpeg"></a>
+        </div>
+    </div>
+
+    <div id="info1" class="modal"><div class="modal-content"><a href="#" class="close-btn">✖ CLOSE</a><h2 style="color:#ffcc00">3id l3arsh (Throne Day)</h2><p>Celebrated on July 30th to honor the King's leadership and national unity.</p><a href="https://www.youtube.com/results?search_query=throne+day+morocco" target="_blank" class="yt-link">Watch Video 🎥</a></div></div>
+    
+    <div id="info2" class="modal"><div class="modal-content"><a href="#" class="close-btn">✖ CLOSE</a><h2 style="color:#ffcc00">Green March</h2><p>A peaceful demonstration in 1975 involving 350,000 Moroccans marching into the Sahara.</p><a href="https://www.youtube.com/results?search_query=green+march+morocco" target="_blank" class="yt-link">Watch Video 🎥</a></div></div>
+
+    <div id="info3" class="modal"><div class="modal-content"><a href="#" class="close-btn">✖ CLOSE</a><h2 style="color:#ffcc00">Independence Day</h2><p>Celebrating the return of King Mohammed V and the end of the protectorate in 1955.</p><a href="https://www.youtube.com/results?search_query=independence+day+morocco" target="_blank" class="yt-link">Watch Video 🎥</a></div></div>
+
+    <div id="info4" class="modal"><div class="modal-content"><a href="#" class="close-btn">✖ CLOSE</a><h2 style="color:#ffcc00">Moroccan Wedding</h2><p>A multi-day ceremony featuring the Takchita, Amariya, and traditional music.</p><a href="https://www.youtube.com/results?search_query=moroccan+wedding" target="_blank" class="yt-link">Watch Video 🎥</a></div></div>
+
+    <div id="info5" class="modal"><div class="modal-content"><a href="#" class="close-btn">✖ CLOSE</a><h2 style="color:#ffcc00">Labor Day</h2><p>May 1st celebrations honoring the workers of the Kingdom.</p><a href="https://www.youtube.com/results?search_query=labor+day+morocco" target="_blank" class="yt-link">Watch Video 🎥</a></div></div>
+
+    <div id="info6" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close-btn">✖ CLOSE</a>
+            <h2 style="color:#ffcc00">Yennayer (Amazigh New Year)</h2>
+            <p>Celebrated on January 14th, Yennayer marks the start of the agrarian calendar. It is a symbol of the deep roots of Amazigh culture in Morocco. Families prepare the traditional <b>"Tagoula"</b> and share a 7-vegetable couscous.</p>
+            <a href="https://www.youtube.com/results?search_query=amazigh+new+year+morocco+celebration" target="_blank" class="yt-link">Watch Ceremony 🎥</a>
+        </div>
+    </div>
+
+    <div class="nav-footer">
+        <a href="morocco.html" class="back-link">⬅ BACK TO HISTORY </a>
+    </div>
+    <div class="nav-footer">
+        <a href="food.html" class="back-link">➡ food  </a>
+    </div>
+</body>
+</html>

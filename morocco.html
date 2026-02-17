@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOROCCO: Cinematic Journey</title>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #a6f0a6, #70e070, #98f098);
+    background-size: 400% 400%;
+    animation: greenFlow 20s ease infinite;
+}
+body.fade-out {
+    animation: fadeOutPage 0.8s forwards;
+}
+
+@keyframes fadeOutPage {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes greenFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== White Intro Screen ===== */
+#white-screen {
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background-color:white;
+    z-index: 30; /* above everything */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeOutWhite 3s ease forwards;
+    animation-delay: 4s;
+}
+
+#white-screen div {
+    font-size: clamp(30px, 4vw, 60px);
+    color: black;
+    margin: 10px 0;
+    opacity: 0;
+}
+
+#white-screen .line1 { animation: showLine 1s ease forwards; animation-delay: 0.5s; }
+#white-screen .line2 { animation: showLine 1s ease forwards; animation-delay: 1.5s; }
+#white-screen .line3 { animation: showLine 1s ease forwards; animation-delay: 2.5s; }
+
+@keyframes showLine {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOutWhite {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+/* ===== Historical Monuments Background ===== */
+#monuments-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0; left:0;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    animation: moveBackground 60s linear infinite;
+    pointer-events: none; /* so clicks pass through */
+}
+
+#monuments-bg img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: 0.5;
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-10%, -10%); }
+    100% { transform: translate(0,0); }
+}
+
+/* ===== Moroccan Flag ===== */
+#morocco-flag {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 150px;
+    opacity: 0;
+    z-index: 5;
+    animation: flagAppear 2s ease forwards, flagWave 3s ease-in-out 1s infinite;
+    animation-delay: 6s, 8s;
+}
+
+@keyframes flagAppear {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 0.5; transform: scale(1); }
+}
+
+@keyframes flagWave {
+    0%, 100% { transform: skewY(0deg) scaleX(1); }
+    50% { transform: skewY(5deg) scaleX(0.95); }
+}
+
+/* ===== Morocco Text ===== */
+#morocco-text {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(60px, 8vw, 120px);
+    font-weight: bold;
+    letter-spacing: 20px;
+    color: white;
+    opacity: 0;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+    animation: moroccoTextFade 2s ease forwards;
+    animation-delay: 10s;
+}
+
+@keyframes moroccoTextFade {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Subtext ===== */
+#sub-text {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(25px, 3vw, 40px);
+    color: #ff6200;
+    opacity: 0;
+    animation: subTextFade 2s ease forwards;
+    animation-delay: 12s;
+}
+
+@keyframes subTextFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Buttons ===== */
+.nav-container {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    animation: buttonsFade 2s ease forwards;
+    animation-delay: 14s;
+    z-index: 20; /* make sure buttons are clickable */
+}
+
+.nav-btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    background-color: #c1272d;
+    border-radius: 50px;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #12db7a;
+    transform: scale(1.1);
+}
+
+@keyframes buttonsFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- White Intro Screen -->
+<div id="white-screen">
+    <div class="line1">Here</div>
+    <div class="line2">Where the Culture Meets</div>
+    <div class="line3">To Build a Country...</div>
+</div>
+
+<!-- Historical Monuments Background -->
+<div id="monuments-bg">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (1).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (2).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (3).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (4).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (5).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (6).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (7).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (8).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (9).jpeg" alt="">
+    <img src="c:\Users\hasna aitiaz\Downloads\images (10).jpeg" alt="">
+</div>
+
+<!-- Moroccan Flag -->
+<img src="c:/Users/hasna aitiaz/Downloads/istockphoto-182822520-612x612 - Copie.jpg" alt="Moroccan Flag" id="morocco-flag">
+
+<!-- Morocco Text -->
+<div id="morocco-text">M O R O C C O</div>
+<div id="sub-text">المغرب The Miracle of Culture</div>
+
+<!-- Navigation Buttons -->
+<div class="nav-container">
+    <a href="ceremonies.html" class="nav-btn">Ceremonies</a>
+    <a href="food.html" class="nav-btn">Food</a>
+    <a href="nature.html" class="nav-btn">Nature</a>
+    <a href="nextpage.html" class="nav-btn">History</a>
+</div>
+
+</body>
+</html>

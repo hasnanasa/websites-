@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flavors of Morocco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@1,600&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark-gold: #8e6d2f;
+            --bg-black: #050505;
+            --accent-red: #5e0b0b;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-black);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- LUXURY BACKGROUND --- */
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.05) 0%, transparent 70%),
+                linear-gradient(rgba(16, 132, 51, 0.85), rgba(0,0,0,0.85)),
+                url("c:/Users/hasna aitiaz/Downloads/moroccan_pattern.jpg");
+            background-size: 400px;
+            z-index: -2;
+        }
+
+        /* --- MOUSE GLOW --- */
+        .cursor-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: 0.1s;
+        }
+
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(50px, 10vw, 100px);
+            color: var(--gold);
+            margin: 0;
+            letter-spacing: 15px;
+            text-shadow: 0 10px 30px rgba(0,0,0,1);
+        }
+
+        .hero-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: var(--dark-gold);
+            letter-spacing: 5px;
+        }
+
+        /* --- GRID --- */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            padding: 50px 5vw;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .food-item {
+            position: relative;
+            background: #0a0a0a;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            padding: 10px;
+            transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .food-item:hover {
+            transform: translateY(-15px);
+            border-color: var(--gold);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+
+        .image-box {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) brightness(0.7);
+            transition: 1.2s;
+        }
+
+        .food-item:hover img {
+            filter: grayscale(0%) brightness(1.1);
+            transform: scale(1.1);
+        }
+
+        /* --- OVERLAY TEXT --- */
+        .hover-reveal {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(94, 11, 11, 0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .food-item:hover .hover-reveal { opacity: 1; }
+
+        .info-box { padding: 25px 15px; text-align: center; }
+        .info-box h3 { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 20px; margin-bottom: 10px; }
+        .info-box p { color: #888; font-size: 13px; line-height: 1.6; }
+
+        .nav-wrap { display: flex; justify-content: center; gap: 30px; margin: 80px 0; }
+        .luxury-btn {
+            text-decoration: none; color: var(--gold); padding: 15px 40px;
+            border: 1px solid var(--gold); font-family: 'Cinzel', serif; transition: 0.4s;
+        }
+        .luxury-btn:hover { background: var(--gold); color: black; box-shadow: 0 0 30px var(--gold); }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+    <div class="cursor-glow" id="glow"></div>
+
+    <header>
+        <h1>AL-MAIDA</h1>
+        <div class="hero-sub">The Ten Culinary Pillars of the Kingdom</div>
+    </header>
+
+    <div class="gallery-container">
+        
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (30).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">Friday Tradition</h4>
+                    <p style="color:white">The gathering of souls around a mountain of light semolina.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>01. COUSCOUS</h3>
+                <p>A sacred ritual of steam and vegetables, seasoned with the warmth of Moroccan Friday afternoons.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (31).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">The Earth's Vessel</h4>
+                    <p style="color:white">Slow-cooked poetry inside a conical clay sanctuary.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>02. TAJINE</h3>
+                <p>From the Atlas peaks to the Sahara, this dish defines the very essence of Moroccan patience.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (32).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">The Silk Pie</h4>
+                    <p style="color:white">Layers of history, sugar, and spice in a crisp embrace.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>03. PASTILLA</h3>
+                <p>The refined elegance of Fes, where savory meats meet the sweet dust of cinnamon.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (33).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">The Medina's Secret</h4>
+                    <p style="color:white">Meat transformed by the embers of the Hammam furnace.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>04. TANJIA</h3>
+                <p>The spirit of Marrakech—manly, rugged, and bursting with the flavor of preserved lemons.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (34).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">The Fast-Breaker</h4>
+                    <p style="color:white">A velvet texture of tomato and herb that heals the soul.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>05. HARIRA</h3>
+                <p>More than a soup; it is the heartbeat of Ramadan, carrying the scent of celery and ginger.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (35).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">The Mother's Comfort</h4>
+                    <p style="color:white">A spice-soaked pancake that brings healing and joy.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>06. RFISSA</h3>
+                <p>Intense and aromatic, this dish is a warm embrace of fenugreek and Ras El Hanout.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (36).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">Smoked Aubergine</h4>
+                    <p style="color:white">The earth's colors mashed into a garlic-infused delight.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>07. ZAALOUK</h3>
+                <p>The vibrant salad of the sun, celebrating the marriage of eggplant and olive oil.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (37).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">The Grand Banquet</h4>
+                    <p style="color:white">Gold-roasted skin hiding the tenderest of lamb.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>08. MECHOUI</h3>
+                <p>The centerpiece of every grand celebration, seasoned only with the pure dust of cumin.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (38).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">The Hidden Treasure</h4>
+                    <p style="color:white">A mountain of sweet vermicelli hiding a savory heart.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>09. SEFFA</h3>
+                <p>The final act of a banquet, where almonds and cinnamon crown a delicate pasta nest.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="image-box">
+                <img src="c:\Users\hasna aitiaz\Downloads\téléchargement (39).jpeg">
+                <div class="hover-reveal">
+                    <h4 style="color:var(--gold)">The Moroccan Whiskey</h4>
+                    <p style="color:white">A silver stream falling into a glass of amber and mint.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>10. ATAY</h3>
+                <p>The eternal symbol of hospitality. Three cups: one for life, one for love, and one for death.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nav-wrap">
+        <a href="ceremonies.html" class="luxury-btn">Traditions</a>
+        <a href="nature.html" class="luxury-btn">Nature</a>
+    </div>
+
+    <script>
+        const glow = document.getElementById('glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>
+
+</body>
+</html>

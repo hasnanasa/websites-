@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer in Morocco - The Golden Coast</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* Summer background: Mediterranean blue or Atlantic waves */
+            background: linear-gradient(rgba(0, 80, 150, 0.4), rgba(0, 40, 80, 0.6)), 
+                        url("c:/Users/hasna aitiaz/Downloads/téléchargement (44).jpeg");
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* SUNNY GOLDEN LETTERS */
+        .summer-title {
+            margin-top: 60px;
+            text-align: center;
+            animation: pulse 3s infinite;
+        }
+
+        h1 {
+            color: #FFD700; /* Golden Yellow */
+            font-size: 55px;
+            text-shadow: 0px 0px 25px rgba(255, 215, 0, 0.6);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .content-container {
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 30px;
+            margin: 40px 20px;
+            border: 2px solid #FFD700;
+        }
+
+        h2 { color: #FFD700; border-bottom: 2px solid #FFD700; padding-bottom: 10px; }
+
+        /* COASTAL GALLERY */
+        .beach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .beach-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #00BFFF; /* Deep Sky Blue */
+            transition: 0.3s;
+        }
+
+        .beach-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3); }
+
+        .beach-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .beach-info { padding: 20px; }
+        .beach-info h3 { color: #00BFFF; margin-top: 0; }
+
+        /* THE "SUMMER VIBE" SECTION */
+        .vibe-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 20px;
+            border-left: 8px solid #FF8C00; /* Dark Orange */
+            margin-top: 30px;
+        }
+
+        .btn-back {
+            margin: 40px 0 100px 0;
+            padding: 15px 40px;
+            background: #FFD700;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover { background: white; color: black; }
+    </style>
+</head>
+<body>
+
+    <div class="summer-title">
+        <h1>Summer in Morocco</h1>
+        <p style="color: #00BFFF; font-size: 20px; font-weight: bold;">Sun, Surf, and Sapphire Seas</p>
+    </div>
+
+    <div class="content-container">
+        <h2>Inspiring Coastal Gems</h2>
+        <div class="beach-grid">
+            <div class="beach-card">
+              
+                <div class="beach-info">
+                      <img src="c:/Users/hasna aitiaz/Downloads/téléchargement (52).jpeg">
+                    <h3>Al Hoceima</h3>
+                    <p>The "Mediterranean Pearl." Famous for Quemado Beach and turquoise waters nestled between the Rif Mountains.</p>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600">
+                <div class="beach-info">
+                    <h3>Taghazout</h3>
+                    <p>The surf capital. A bohemian fishing village where the Atlantic breeze keeps the summer heat perfectly cool.</p>
+                </div>
+            </div>
+
+            <div class="beach-card">
+                <img src="c:/Users/hasna aitiaz/Downloads/téléchargement (48).jpeg">
+                <div class="beach-info">
+                    <h3>Dakhla Lagoon</h3>
+                    <p>Where the Sahara meets the sea. A world-class spot for kitesurfing and eating fresh oysters under the desert sun.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vibe-box">
+            <h3 style="color: #FF8C00;">The Summer Spirit</h3>
+            <p>While the interior cities like Marrakech bask in intense gold heat, the coast becomes a playground. Summer is the season of <b>Grilled Sardines</b> at the port, <b>Fresh Mint Tea</b> on the beach, and the late-night <b>Corniche</b> walks. It is the time for festivals like the *Gnaoua World Music Festival* in Essaouira, where the music flows as freely as the ocean waves.</p>
+        </div>
+    </div>
+<div class="beach-grid">
+            <div class="beach-card">
+                <img src="c:/Users/hasna aitiaz/Downloads/téléchargement (52).jpeg">
+                <div class="beach-info">
+                    <h3>Al Hoceima (Mediterranean)</h3>
+                    <p><b>Summer Detail:</b> Crystal clear turquoise bays. Perfect for cliff diving and boat trips to the rocky "Bokkoya" coastline.</p>
+                </div>
+            </div>
+            
+            <div class="beach-card">
+                <img src="c:/Users/hasna aitiaz/Downloads/téléchargement (50).jpeg">
+                <div class="beach-info">
+                    <h3>Essaouira (The Windy City)</h3>
+                    <p><b>Summer Detail:</b> A sanctuary from the heat. Famous for the Gnaoua music festival and cool Atlantic breezes.</p>
+                </div>
+            </div>
+
+            <div class="beach-card">
+                <img src="c:/Users/hasna aitiaz/Downloads/téléchargement (48).jpeg">
+                <div class="beach-info">
+                    <h3>Dakhla Lagoon</h3>
+                    <p><b>Summer Detail:</b> Where the Sahara meets the Sea. A world-class destination for kitesurfers and nature lovers.</p>
+                </div>
+            </div>
+
+            <div class="beach-card">
+                <img src="c:/Users/hasna aitiaz/Downloads/téléchargement (47).jpeg">
+                <div class="beach-info">
+                    <h3>Asilah (The Arts Town)</h3>
+                    <p><b>Summer Detail:</b> Famous for its annual mural painting festival. A peaceful, white-washed town with golden beaches.</p>
+                </div>
+            </div>
+        </div>
+    <a href="nature.html" class="btn-back">⬅ RETURN TO SEASONS</a>
+
+</body>
+</html>

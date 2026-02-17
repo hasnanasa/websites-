@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> 
+<title>Visit Morocco - The Land of Wonders</title> 
+<style> 
+    :root {
+        --gold: #ffcc00;
+    }
+
+   body{
+    
+          
+    margin: 0;
+    padding: 0;
+
+    /* Animated Moroccan colors */
+    background: linear-gradient(
+        -45deg,
+        rgba(0, 98, 51, 0.85),
+        rgba(139, 0, 0, 0.85),
+        rgba(0, 98, 51, 0.85),
+        rgba(139, 0, 0, 0.85)
+    );
+    background-size: 400% 400%;
+    animation: moroccoFlow 10s ease-in-out infinite;
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Background animation */
+@keyframes moroccoFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+        
+    /* MOHAMMED VI IMAGE AT TOP */
+    .king-image {
+        width: 100%;
+        height: 250px;
+        background: url("/mnt/data/988e219f-c733-43dd-b9f1-36985e782325.jpeg") center center no-repeat;
+        background-size: contain;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        filter: brightness(0.9);
+    }
+
+    /* HERO BANNER */
+    .hero-banner {
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 60px;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        text-shadow: 0 0 30px rgba(255,204,0,0.5);
+    }
+
+    .hero-text p {
+        font-size: 24px;
+        opacity: 0.9;
+    }
+
+    /* MIDPAGE BACKGROUND IMAGE - FULL RED AND GREEN */
+    .mid-background {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .mid-background h2 {
+        color: #fff;
+        font-size: 36px;
+        text-align: center;
+        text-shadow: 0 0 15px rgba(0,0,0,0.5);
+        position: relative;
+        z-index: 1;
+    }
+
+    /* CONTENT SECTIONS */
+    .summary-container {
+        max-width: 1100px;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin: 0 auto;
+    }
+
+    .summary-box {
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,204,0,0.2);
+        transition: 0.3s;
+    }
+
+    .summary-box:hover {
+        border-color: var(--gold);
+        background: rgba(17, 107, 11, 0.1);
+    }
+
+    .summary-box h2 { 
+        color: var(--gold); 
+        font-size: 28px; 
+        margin-top: 0; 
+    }
+    .summary-box p { 
+        color: #cccccc; 
+        line-height: 1.6; 
+    }
+
+    .slang-highlight {
+        grid-column: span 2;
+        background: #006233;
+        padding: 40px;
+        border-radius: 30px;
+        text-align: center;
+        border: 2px solid var(--gold);
+    }
+
+    .slang-tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .tag {
+        background: rgba(20, 82, 7, 0.3);
+        padding: 10px 20px;
+        border-radius: 50px;
+        color: var(--gold);
+        font-weight: bold;
+        border: 1px solid var(--gold);
+    }
+</style>
+</head>
+<body>
+    
+
+<!-- MOHAMMED VI IMAGE -->
+<div class="king-image"></div>
+
+<!-- HERO BANNER -->
+<div class="hero-banner">
+    <div class="hero-text">
+        <h1>Magical Morocco</h1>
+        <p>The Land Where Reality Meets Dreams</p>
+    </div>
+</div>
+
+<!-- MIDPAGE BACKGROUND IMAGE -->
+<div class="mid-background">
+    <h2>Discover the Kingdom</h2>
+</div>
+
+<!-- CONTENT SECTIONS -->
+<div class="summary-container">
+    <div class="summary-box">
+        <h2>The Weirdness of Nature</h2>
+        <p>From goats that climb Argan trees to the "God's Bridge" in Akchour...</p>
+    </div>
+    <div class="summary-box">
+        <h2>The Soul of Food</h2>
+        <p>Our food is a history lesson on a plate...</p>
+    </div>
+    <div class="summary-box">
+        <h2>Living Ceremonies</h2>
+        <p>We don't just celebrate; we create art...</p>
+    </div>
+    <div class="summary-box">
+        <h2>A World of Difference</h2>
+        <p>Morocco is a "Cold country with a hot sun"...</p>
+    </div>
+
+    <div class="slang-highlight">
+        <h2>One Country, Many Tongues</h2>
+        <p>Beyond Arabic and Tamazight, Morocco is home to a unique "Slang" (Darija)...</p>
+        <div class="slang-tags">
+            <span class="tag">Daba</span>
+            <span class="tag">Mzyan</span>
+            <span class="tag">Wakcha</span>
+            <span class="tag">Safi</span>
+            <span class="tag">Koulchi Labas?</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

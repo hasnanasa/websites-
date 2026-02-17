@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morocco: The Great Dynasties</title>
+    <style>
+        body {
+          
+    margin: 0;
+    padding: 0;
+
+    /* Animated Moroccan colors */
+    background: linear-gradient(
+        -45deg,
+        rgba(0, 98, 51, 0.85),
+        rgba(139, 0, 0, 0.85),
+        rgba(0, 98, 51, 0.85),
+        rgba(139, 0, 0, 0.85)
+    );
+    background-size: 400% 400%;
+    animation: moroccoFlow 10s ease-in-out infinite;
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Background animation */
+@keyframes moroccoFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+        
+
+        .map-container {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .click-hint {
+            font-size: 11px;
+            color: #ffcc00;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-3px); }
+            100% { opacity: 0.5; transform: translateY(0); }
+        }
+
+        .main-map {
+            width: 150px;
+            border-radius: 10px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .main-map:hover { transform: scale(1.1); filter: drop-shadow(0 0 15px #ffcc00); }
+
+        .map-popup {
+            position: absolute;
+            top: 110%;
+            right: 0;
+            width: 220px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #ffcc00;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 13px;
+            text-align: left;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .map-container:hover .map-popup {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        h1 {
+            background: transparent !important;
+            text-align: center;
+            font-size: clamp(50px, 9vw, 90px);
+            margin-top: 80px;
+            margin-bottom: 0px;
+            text-shadow: 4px 4px 15px rgba(0,0,0,0.9);
+            letter-spacing: 8px;
+        }
+
+        .intro-text {
+            background: transparent !important;
+            font-size: clamp(18px, 3vw, 26px);
+            margin-bottom: 100px;
+            color: #ffcc00;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .civ-section {
+            width: 85%;
+            max-width: 850px;
+            background: rgba(0, 0, 0, 0.55); 
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            margin-bottom: 120px;
+            border-left: 8px solid #ffcc00;
+            border-radius: 0 30px 30px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .civ-section {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: showDynasty 0.6s ease forwards;
+}
+
+/* Fade & slide */
+@keyframes showDynasty {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        .civ-section h3 {
+            color: #ffcc00;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+
+        .civ-section p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #eee;
+        }
+
+        .civ-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .nav-footer {
+            width: 85%;
+            max-width: 850px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 100px;
+        }
+
+        .flesh-link {
+            text-decoration: none;
+            color: #ffcc00;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .flesh-link:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+/* ================= GEOGRAPHY INTRO ================= */
+#geo-intro {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.48);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    z-index: 3000;
+    animation: geoFadeOut 2s ease forwards;
+    animation-delay: 4s;
+}
+
+#geo-intro h2 {
+    color: #ffcc00;
+    font-size: clamp(28px, 5vw, 42px);
+    margin-bottom: 20px;
+}
+
+#geo-intro p {
+    max-width: 700px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #eee;
+}
+
+/* Fade out geography */
+@keyframes geoFadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+        .arrow { font-size: 40px; margin: 0 10px; }
+        .civ-section:nth-of-type(1) { animation-delay: 2s; }
+.civ-section:nth-of-type(2) { animation-delay: 2.3s; }
+.civ-section:nth-of-type(3) { animation-delay: 2.6s; }
+.civ-section:nth-of-type(4) { animation-delay: 2.9s; }
+.civ-section:nth-of-type(5) { animation-delay: 3.2s; }
+.civ-section:nth-of-type(6) { animation-delay: 3.5s; }
+.civ-section:nth-of-type(7) { animation-delay: 3.8s; }
+
+    </style>
+</head>
+<body>
+<div id="geo-intro">
+    <h2>Morocco at a Crossroads of Worlds</h2>
+    <p>
+        Located in North Africa, Morocco borders both the Atlantic Ocean and the Mediterranean Sea.
+        It connects Africa to Europe, and the Arab world to Amazigh heritage.
+    </p>
+    <p>
+        Mountains, deserts, and coastlines shaped its history — and its dynasties.
+    </p>
+</div>
+
+    <div class="map-container">
+        <div class="click-hint">Click for details</div>
+        <a href="your-next-page.html">
+            <img class="main-map" src="c:\Users\hasna aitiaz\Downloads\morocco-red-map-with-border-of-regions-outline-free-vector.jpg" alt="Morocco Map">
+        </a>
+        <div class="map-popup">
+            <p style="margin:0; color:#ffcc00;"><b>Did you know?</b></p>
+            <p style="margin:5px 0 0 0;">Morocco is just 14km from Europe and borders both the Atlantic and Mediterranean.</p>
+        </div>
+    </div>
+
+    <h1>MOROCCO</h1>
+    <div class="intro-text">History and Geography</div>
+
+    <section class="civ-section">
+        <h3>1. The Phoenicians & Romans</h3>
+        <p>Before the Islamic era, the Phoenicians established coastal trading posts like Lixus. Later, the Romans occupied northern Morocco, leaving behind the ruins of Volubilis.</p>
+        <img class="civ-img" src="c:\Users\hasna aitiaz\Downloads\téléchargement (20).jpeg">
+    </section>
+
+    <section class="civ-section">
+        <h3>2. The Idrisid Dynasty (788-974)</h3>
+        <p>Founded by Idris I, this was the first major Islamic dynasty in Morocco. They founded Fes, the nation's spiritual heart.</p>
+        <img class="civ-img" src="c:\Users\hasna aitiaz\Downloads\téléchargement (21).jpeg">
+    </section>
+
+    <section class="civ-section">
+        <h3>3. The Almoravid Dynasty (1040–1147)</h3>
+        <p>A Saharan Amazigh empire that founded Marrakech and united Morocco with Al-Andalus.</p>
+        <img class="civ-img" src="c:\Users\hasna aitiaz\Downloads\Almoravids-in-the-Desert-1024x574.webp">
+    </section>
+
+    <section class="civ-section">
+        <h3>4. The Almohad Dynasty (1121–1269)</h3>
+        <p>Reformers who built the Hassan Tower and the Giralda.</p>
+        <img class="civ-img" src="c:\Users\hasna aitiaz\Downloads\téléchargement (22).jpeg">
+    </section>
+
+    <section class="civ-section">
+        <h3>5. The Marinid Dynasty (1244–1465)</h3>
+        <p>Patrons of art and education who built the famous Madrasas of Fes.</p>
+        <img class="civ-img" src="c:\Users\hasna aitiaz\Downloads\téléchargement (23).jpeg">
+    </section>
+
+    <section class="civ-section">
+        <h3>6. The Saadi Dynasty (1549–1659)</h3>
+        <p>Defeated the Portuguese and built the El Badi Palace.</p>
+        <img class="civ-img" src="c:\Users\hasna aitiaz\Downloads\téléchargement (24).jpeg">
+    </section>
+
+    <section class="civ-section">
+        <h3>7. The Alaouite Dynasty (1666–Present)</h3>
+        <p>The current reigning family who unified modern Morocco.</p>
+        <img class="civ-img" src="c:\Users\hasna aitiaz\Downloads\téléchargement (25).jpeg">
+    </section>
+
+    <div class="nav-footer">
+        <a href="morocco.html" class="flesh-link">
+            <span class="arrow">⬅</span>
+            <span>PREVIOUS PAGE</span>
+        </a>
+        
+        <a href="ceremonies.html" class="flesh-link">
+            <span>CEREMONIES</span>
+            <span class="arrow">➡</span>
+        </a>
+    </div>
+
+</body>
+</html>
