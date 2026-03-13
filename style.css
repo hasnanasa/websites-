@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex ;
+    align-items:center;
+    justify-content:center;
+    background-color:rgb(207, 228, 207);
+    padding: 3px;
+
+}
+
+.profile-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width:50px;
+    width:500%;
+    background: rgb(202, 113, 113);
+    border-radius:24px;
+    padding: 100px;
+    box-shadow: 0 5px 10px black ;
+}
+.image{
+    position : relative ;
+    height: 150px;
+    width: 150px;
+    border-radius:50%;
+    background-color: blue;
+    padding : 3px;
+    margin-bottom:10px;
+    top: 0px;
+    bottom: 500px;
+}
+.image .profile-img{
+    height :100%;
+    width: 100%;
+    object-fit:cover;
+    border-radius:50%;
+    border : 3px solid white;
+}
+.profile-card .text-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+
+.text-data .name{
+    font-size : 20px;
+    font-weight: 500;
+}
+.text-data .job{
+    font-size :15px;
+    font-weight : 500;
+}
+.media-buttons .profile-card {
+    display: flex;
+    align-items: center ;
+    margin-top: 15px;
+}
+.media-buttons .link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    margin: 0 8px;
+    background-color: blue;
+    text-decoration: none;
+}
+.buttons .profile-card{
+    display : flex;
+    align-items: center;
+    margin-top:25px;
+}
+.buttons .button{
+    color: white;
+    font-size:14px;
+    font-weight:400;
+    border:none;
+    border-radius: 24px;
+    margin :20 10px;
+    padding: 10px 24px;
+    background-color: blue;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.buttons .button:hover{
+    background-color: whitesmoke;
+}
+
+.profile-card::before{
+    content:"";
+    position: absolute;
+    top:1.5;
+    left: center ;
+    height: 25%
+    ;width:40%;
+    background-color:blue;
+    border-radius:10px;
+}
