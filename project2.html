@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<!---CODING BY CODINGLAV || WW.CODINGLABWEB-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Image Slider Js</title>
+       <link rel="stylesheet" href="project2.css"/>
+    </head>
+    <body>
+        <section class ="wrapper">
+            <i class="fa-solid fa-arrow-left button" id="prev"></i>
+            <div class="image-container">
+                <div class="carousel">
+                    <img src = "c:\Users\hasna\Downloads\images (1).jpg" alt="">
+                    <img src = "c:\Users\hasna\Downloads\images (2).jpg" alt="">
+                    <img src = "c:\Users\hasna\Downloads\images (3).jpg" alt="">
+                    <img src = "c:\Users\hasna\Downloads\images (4).jpg" alt="">
+                </div>
+                    <i class="fa-solid fa-arrow-left button" id="next"></i>
+            </div>
+             </section>
+             <script >
+        // Paste your corrected JavaScript code here
+        const wrapper = document.querySelector(".wrapper");
+        const carousel = document.querySelector(".carousel");
+        const images = document.querySelectorAll("img");
+        const buttons = document.querySelectorAll(".button");
+        let imageIndex = 1;
+        let intervalId;
+
+        const slideImage = () => {
+            if (imageIndex === images.length) {
+                imageIndex = 0;
+            } else if (imageIndex < 0) {
+                imageIndex = images.length - 1;
+            }
+            carousel.style.transform = `translate(-${imageIndex * 100}%)`;
+        };
+
+        const autoSlide = () => {
+            intervalId = setInterval(() => {
+                imageIndex++;
+                slideImage();
+            }, 2000);
+        };
+
+        autoSlide();
+
+        const updateClick = (e) => {
+            clearInterval(intervalId);
+            imageIndex += e.target.id === "next" ? 1 : -1;
+            slideImage();
+            console.log(imageIndex);
+            autoSlide();
+        };
+
+        buttons.forEach(button => button.addEventListener("click", updateClick));
+
+        wrapper.addEventListener("mouseover", () => clearInterval(intervalId));
+        wrapper.addEventListener("mouseleave", autoSlide);
+                </script>
+
+    </body>
+</html> 
