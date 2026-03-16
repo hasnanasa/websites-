@@ -1,0 +1,117 @@
+*{ 
+    margin: 0;
+    padding :0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    width: 10%;
+    height: 10%;
+    background-size:cover;
+    background-position: right;
+    position: relative;
+    left: 20px;
+    top: 0px;
+    
+
+}
+section nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 8px black ;
+    background-color: rgba(255, 255, 255, 0.491);
+    position:fixed ;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:100;
+}
+section nav .logo {
+    font-size: 35px;
+    color: pink;
+    margin: 5px 0;
+    cursor: pointer;
+    position: relative ;
+    left: 4%;
+}
+
+section nav .logo span{
+    color: rgb(192, 27, 137);
+    text-decoration : underline ; 
+}
+
+section nav ul{
+    list-style: none;
+}
+section nav ul li a:hover {
+    color: red;
+}
+
+section nav .icons i{
+    margin:0 4px;
+    cursor: pointer;
+    font-size: 10px;
+    transition:0.3s;
+}
+section nav .icons i:hover{
+    color:red;
+}
+
+section .main .main_content{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section .main .main_content .main_text h1{
+    font-size: 90px;
+    line-height: 70px;
+    font-family: pyxidium quick;
+    background: linear-gradient(to right, pink, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 45px;
+    left: 5%;
+}
+section .main .main_content .main_text h1 span{
+    font-size: 70px;
+    background: linear-gradient(to right, pink, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section .main .main_content .main_text p{
+    width: 600px;
+    text-align: justify;
+    line-height:21px;
+    position:relative;
+    top: 50px;
+    left: 5%;
+}
+
+section .main .main_content .main_image img{
+    width: 650px;
+    position: relative;
+    left: 20px;
+    top: 75px;
+    background-image: url("c:/Users/hasna/Downloads/image(10).jpg");
+    background-size:100%;
+
+    
+}
+sectioon .main .social_icon{
+    position: absolute;
+    top: 50%;
+    left:98%;
+    transform: translate(-50%, -50%);
+    font-size: 19px;
+}
+
