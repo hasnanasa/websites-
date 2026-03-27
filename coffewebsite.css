@@ -1,0 +1,442 @@
+/*importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto" ;
+}
+
+header {
+    border-radius: 2px;
+    border-color:rgb(32, 217, 217);
+    border-width: 1px;
+    border-style: solid;
+    background-color: rgb(57, 7, 7,0.5);
+    padding: 20px;
+    margin: 20px;
+}
+.navbar{
+    background-image:url('123fb592d87953a7bc67ac8fc1303de8.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;        /* Makes image cover entire body */
+    background-position: center;   /* Centers the image */
+    background-attachment: fixed;  
+
+}
+
+.navbar .nav-logo{
+    color: whitesmoke;
+}
+
+.navbar  .nav-menu{
+    background-color:rgb(235, 242, 242,0);
+    position : relative;
+    left: 20px;
+    display: inline-block;
+
+}
+
+.navbar  .nav-menu .nav-item{
+    color:rgb(152, 23, 23);
+    display: inline-flex;
+   
+
+}
+.navbar  .nav-menu .nav-item:hover{
+    color:rgb(152, 23, 23);
+  
+}
+.navbar  .nav-menu .nav-item .nav-link{
+    color:rgb(252, 249, 249);
+    margin: 50px;
+    position: relative;
+    left: 20px;
+    top: 0px;
+}
+
+.navbar  .nav-menu .nav-item .nav-link button{
+    border-radius: 10px;
+    border-style: solid;
+    padding:10px;
+    margin: 10px;
+    justify-content: top;
+    
+}
+
+.navbar  .nav-menu .nav-item .nav-link button:hover{
+    color:blue;
+    background-color:rgb(138, 65, 6);
+}
+
+body{
+    background-image:url('c396f104506ce1a8860763300ab72773.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;        /* Makes image cover entire body */
+    background-position: center;   /* Centers the image */
+    background-attachment: fixed;  
+
+}
+
+/*main section */
+main{
+    padding: 20px;
+    margin: 10px;
+   
+}
+
+
+main .hero-section:hover {
+    color: rgb(239, 141, 12);
+    transform: translateX(10px);
+    text {
+        font-weight: lighter;
+        /* or */
+        font-weight: 300;
+        /* or */
+        font-weight: 100; /* thinnest */
+    }
+}
+
+main .hero-section .section{
+    position: absolute;
+        left: 200px;
+}
+
+main .hero-section .section .hero-details{
+        text-align: center;
+        text-decoration-color: rgb(154, 203, 6);
+        padding: 10px;
+        margin:10px;
+        font-size: 20px ;  
+        border-radius : 20px;
+        border-color: bisque;
+        background-color:rgb(216, 228, 214);  
+        display: inline-block;  /* Makes div only as wide as its content */
+}
+
+main .hero-section .section .img-coffee{
+    position:absolute;
+    left: 300px;
+    top: 100%;
+    width: 150px;
+    height: 150px;
+    box-shadow: chocolate;
+    border-radius: 10px;
+    border-color: black;
+    border-style: dotted;
+}
+
+main .hero-section .section .img-coffee2{
+    position:absolute;
+    left: 600px;
+    top: 100%;
+    width: 150px;
+    height: 150px;
+    box-shadow: chocolate;
+    border-radius: 10px;
+    border-color: black;
+    border-style: dotted;
+}
+main .hero-section .section .img-coffee3{
+    position:absolute;
+    left: 50px;
+    top: 100%;
+    width: 150px;
+    height: 150px;
+    box-shadow: chocolate;
+    border-radius: 10px;
+    border-color: black;
+    border-style: dotted;
+}
+
+main .hero-section .section .selling .order-now{
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    display: flex;
+    background-color: rgba(250, 242, 242, 0);  /* Background color */
+    color: rgb(212, 123, 21);                         /* Text color */
+    border: 1px solid rgb(32, 217, 217); /* Border */
+    border-radius: 5px;                  /* Rounded corners */
+    padding: 10px 20px;                  /* Space inside button */
+    font-size: 16px;                     /* Text size */
+    font-weight: bold;                   /* Text thickness */
+    cursor: pointer;                     /* Changes cursor to hand */
+    
+}
+main .hero-section .section .selling .order-now1 {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    display: flex;
+    background-color: rgba(250, 242, 242, 0);  /* Background color */
+    color: rgb(18, 17, 17);                         /* Text color */
+    border: 1px solid rgb(32, 217, 217); /* Border */
+    border-radius: 5px;                  /* Rounded corners */
+    padding: 10px 20px;                  /* Space inside button */
+    font-size: 16px;                     /* Text size */
+    font-weight: bold;                   /* Text thickness */
+    cursor: pointer;                     /* Changes cursor to hand */
+    
+}
+main .hero-section .section .selling .order-now {
+    position: absolute;
+    top: 300px;
+    left: 200px;
+    display: flex;
+    background-color: rgba(250, 242, 242, 0);  /* Background color */
+    color: rgb(18, 17, 17);                         /* Text color */
+    border: 1px solid rgb(32, 217, 217); /* Border */
+    border-radius: 5px;                  /* Rounded corners */
+    padding: 10px 20px;                  /* Space inside button */
+    font-size: 16px;                     /* Text size */
+    font-weight: bold;                   /* Text thickness */
+    cursor: pointer;                     /* Changes cursor to hand */
+    
+}
+main .hero-section .section .selling .order-now1:hover {
+   background-color:brown;
+}
+main .hero-section .section .selling .order-now:hover {
+    background-color:brown;
+ }
+
+/*ABOUT US*/
+.ndpage {
+    
+    position: relative;
+    left:25px;
+    top: 400px;
+}
+.ndpage .about .text .review h1{
+    text-align: center;
+    font-size:24px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    padding:10px;
+    margin: 10px;
+}
+
+.ndpage .about .text .review pre{
+    font-style:oblique;
+    text-shadow: 1px;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(230, 226, 226)
+    
+}
+.ndpage .about .text i{
+    margin:10px;
+    padding: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 200px;
+    border-style: double;
+    transform: translateX(2px);
+    
+
+}
+.ndpage .about .text i:hover{
+    color:rgb(50, 42, 165);
+    background-color:bisque;
+    transform: translateX(10px);
+
+}
+.ndpage .about .text .review img{
+    border-radius:500%;
+    border-color: rgb(160, 84, 23);
+    border-style:dotted;
+    width: 500px;
+    height: 500px;
+    
+}
+/* MENU SECTION */
+.help {
+    position: relative;
+    top:490px;
+    background: linear-gradient(to left, rgb(132, 113, 46), rgb(64, 64, 65));
+    width: 100%;
+    padding: 60px 20px;
+}
+
+.help h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu div {
+    border: 3px dashed rgb(210, 214, 15);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    width: 280px;
+}
+
+.menu div:hover {
+    transform: scale(1.05);
+}
+
+.menu img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.menu h2 {
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* TESTIMONIALS SECTION */
+.test1 {
+    position: relative;
+    top: 500%;
+    margin-top: 50%;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f5f5, #8B4513);
+    width: 100%;
+    text-align: center;
+}
+
+.test1 h1 {
+    font-size: 48px;
+    margin-bottom: 60px;
+    color: #333;
+}
+
+.test3 {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.test2 {
+    background: white;
+    border-radius: 20px;
+    width: 320px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    gap: 50px;
+    display: flex;
+}
+
+.test2:hover {
+    transform: translateY(-10px);
+}
+
+.bloc {
+    padding: 35px 25px;
+    text-align: center;
+    
+}
+
+.bloc img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #8B4513;
+    margin-bottom: 20px;
+}
+
+.bloc h2 {
+    font-size: 24px;
+    color: #8B4513;
+    margin: 15px 0 5px 0;
+}
+
+.bloc p {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+}
+
+/* CALL US SECTION */
+.callus {
+    position: relative;
+    margin-top: 50px;           /* Changed from top:700px */
+    background: linear-gradient(to left, rgb(132, 113, 46), rgb(64, 64, 65));
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.callus h1 {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+/* Contact Container */
+.phone {
+    display: flex;              /* Changed from block to flex */
+    justify-content: center;
+    align-items: center;
+    gap: 50px;                  /* Space between social icons */
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Social Media Links */
+.facebook1 {
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.facebook1:hover {
+    transform: translateY(-10px);
+}
+
+.facebook1 img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;         /* Changed to 50% for perfect circle */
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.facebook1 img:hover {
+    background-color: #8B4513;
+    transform: scale(1.1);
+    border-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: Add text labels */
+.facebook1 span {
+    display: block;
+    color: white;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
